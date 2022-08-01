@@ -105,25 +105,25 @@ main div.cards-pokemon a.col-3 ul {
         padding: 10px;
     }
 
-    .nav-container div, .nav-container form {
+    .nav-container div, .nav-container div {
         margin: 10px 0;
     }
 
     
-    .nav-container form{
+    .nav-container div{
         width: 100%;
         display: flex;
         flex-direction: column;
     } 
     
-    .nav-container form label {
+    .nav-container div label {
         margin-bottom: 10px;
     }
-    .nav-container form button.btn {
+    .nav-container div button.btn {
         margin-top: 10px;
     }
 
-    .nav-container form button.btn i {
+    .nav-container div button.btn i {
         margin-right: 10px;
     } 
 

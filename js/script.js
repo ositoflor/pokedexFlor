@@ -2,35 +2,35 @@ const urlApi = 'https://pokeapi.co/api/v2/pokemon'
 
 
 async function getPokemon() {
-    const response = await returnResponse()
-    const dbPokemon = await returnList(response)
+    let response = await returnResponse()
+    let dbPokemon = await returnList(response)
 
     document.getElementById('content').innerHTML = dbPokemon.map(e => e).join('')
 }
 
 
 async function returnResponse() {
-    const response = await fetch(urlApi)
-        .then(e => e.json())
-        .then(e => e.results)
-        .then(e => e.map(e => e.url))
-    return response
+    let response = await fetch(urlApi)
+    let pokemonData = await  response.json()
+    let pokemonResults = await pokemonData.results
+    let pokemonUrl = await pokemonResults.map(e => e.url)
+    return pokemonUrl
 }
 
 
 async function returnList(response) {
     const dbPokemon = []
     for (const pokemon of response) {
-        const responseFor = await fetch(pokemon)
-            .then(e => e.json())
+        let responseFor = await fetch(pokemon)
+        let pokemonData = await responseFor.json()
 
         dbPokemon.push(`
                 <a href="#" class="col-3 ">
-                    <h3>${responseFor.name}</h3>
-                    <img src="${responseFor.sprites.other.home.front_default}"./img/1.png" alt=${responseFor.name}>
+                    <h3>${pokemonData.name}</h3>
+                    <img src="${pokemonData.sprites.other.home.front_default}"./img/1.png" alt=${pokemonData.name}>
                     <p>Habilidades:</p>
                     <ul>
-                        ${responseFor.abilities.map(e => `<li>${e.ability.name}</li>`).join('')}
+                        ${pokemonData.abilities.map(e => `<li>${e.ability.name}</li>`).join('')}
                     </ul>
                 </a>
         `)
@@ -42,10 +42,10 @@ window.onload = getPokemon()
 
 
 async function searchPokemon() {
-    const search = document.getElementById('search-pokemon').value
-    const response = await returnResponse()
-    const dbPokemon = await returnList(response)
-    const searchPokemon = dbPokemon.filter(e => e.includes(search))
+    let search = document.getElementById('search-pokemon').value
+    let response = await returnResponse()
+    let dbPokemon = await returnList(response)
+    let searchPokemon = dbPokemon.filter(e => e.includes(search))
 
     document.getElementById('content').innerHTML = searchPokemon.map(e => e).join('')
 }
