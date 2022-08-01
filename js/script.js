@@ -1,7 +1,7 @@
 const urlApi = 'https://pokeapi.co/api/v2/pokemon'
 
 
-async function testeApi() {
+async function getPokemon() {
     const response = await returnResponse()
     const dbPokemon = await returnList(response)
 
@@ -38,7 +38,7 @@ async function returnList(response) {
     return dbPokemon
 }
 
-window.onload = testeApi()
+window.onload = getPokemon()
 
 
 async function searchPokemon() {
