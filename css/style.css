@@ -24,25 +24,25 @@ header.container-header{
     padding: 10px;
 }
 
-.nav-container form {
+.nav-container div {
     width: 50%;
 }
 
-.nav-container form label {
+.nav-container div label {
     display: flex;
     align-items: center;
     width: 70%;
 }
 
-.nav-container div, .nav-container form {
+.nav-container div, .nav-container div {
     margin: 0px 5px;
 }
 
-.nav-container form button.btn {
+.nav-container div button.btn {
     width: 100%;
 }
 
-.nav-container form button.btn i {
+.nav-container div button.btn i {
     margin-right: 10px;
 }
 

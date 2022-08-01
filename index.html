@@ -20,13 +20,13 @@
     </header>
 
     <nav class="nav-container">
-        <form class="d-flex" role="search">
+        <div class="d-flex" role="search">
             <label for="pokemon">Pesquise o Pokemon: </label>
-            <input class="form-control me-2" type="search" placeholder="Pokemon" aria-label="Search" name="pokemon"
-                id="pokemon">
-            <button class="btn btn-outline-primary" type="submit"><i
+            <input onchange="searchPokemon()" class="form-control me-2" type="search" placeholder="Pokemon" aria-label="Search" name="pokemon"
+                id="search-pokemon">
+            <button class="btn btn-outline-primary" onclick="searchPokemon()"><i
                     class="fa-solid fa-magnifying-glass"></i>Pesquisar</button>
-        </form>
+        </div>
         <!-- <div>
             <button class="btn btn-primary">Listar Pokemon</button>
         </div> -->
