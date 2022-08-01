@@ -23,7 +23,8 @@ async function testeApi() {
                 </a>
         `)
     }
-    document.getElementById('content').innerHTML = dbPokemon
+    document.getElementById('content').innerHTML = dbPokemon.map(e => e).join('')
+
 }
 
-testeApi()
+window.onload = testeApi()
